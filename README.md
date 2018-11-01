@@ -2,7 +2,7 @@
 
 ### Descrioption 
 
-This is `go` app that prints `hello`
+This is `main.go` app that prints `hello`
 
 ### Requierments
 
@@ -12,7 +12,6 @@ You can install it from here: [Installing vagrant](https://www.vagrantup.com/doc
 ### Files
 - `Vagrantfile` - this file is used in order to build DEV environment for the purpose of the app `go`
 - `provision.sh` - script used from `vagrant` in order to install all needed software on the vagrant box. Script is placed into `scripts` directory
-- `main` - app `go` bin file
 - `main.go` - app `go` file
 
 ### Instructions
