@@ -1,10 +1,10 @@
 # golang_hello
 
-### Descrioption 
+### Description 
 
 This is `main.go` app that prints `hello`
 
-### Requierments
+### Requirements
 
 You need vagrant tool installed in order to use this app.
 You can install it from here: [Installing vagrant](https://www.vagrantup.com/docs/installation/)
