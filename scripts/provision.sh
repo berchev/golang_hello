@@ -25,16 +25,3 @@ grep 'GOPATH|GOROOT' /home/vagrant/.bash_profile &>/dev/null || {
   sudo chown -R vagrant:  /home/vagrant
 }
 
-
-# install terraform
-which wget unzip &>/dev/null || {
-  apt-get install -y wget unzip
-}
-
-which terraform &>/dev/null || {
-  pushd /usr/local/bin
-  wget https://releases.hashicorp.com/terraform/0.11.10/terraform_0.11.10_linux_amd64.zip
-  unzip terraform_0.11.10_linux_amd64.zip
-  rm terraform_0.11.10_linux_amd64.zip
-  popd
-}
