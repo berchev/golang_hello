@@ -12,6 +12,7 @@ You can install it from here: [Installing vagrant](https://www.vagrantup.com/doc
 ### Files
 - `Vagrantfile` - this file is used in order to build DEV environment for the purpose of the app `go`
 - `provision.sh` - script used from `vagrant` in order to install all needed software on the vagrant box. Script is placed into `scripts` directory
+- `travis_provision.sh` - script used to buld test machine in travis-ci
 - `main.go` - app `go` file
 
 ### Instructions
