@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # output of our "main.go" app
-out=$(go run main.go)
+out=$(./main)
 
 # Test whether our script work as expected
 if [ "${out}" == "hello" ];then

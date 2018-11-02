@@ -3,13 +3,16 @@ dist: xenial
 sudo: required
 install:
 - bash scripts/travis_provision.sh
+before_script:
+- go build main.go
 script:
 - bash test.sh
 deploy:
   provider: releases
+  skip_cleanup: true
   api_key:
-    secure: J9k4cxhbDsAGT83gZ4gWb3ezHwUubqsm3yL3oIa/udGQGLRXBIlmN1Zl6t404NOHaHN7EmbNs9k8S3ehWoYLH+p685NjK6O5m7p21VJ9gMbtzcQFmlQ/45efweEMCHjug8mTnQE8zAr+4LfM4UVNzyL2W5TMznws4qQU1LB8l2tOlapaM2AM16itVabgFGOlu/jO0J4YVO5G1SW0f7JmV6sOfQ/uJaAUJTE+/+uw+5Y6eo/HHZ0d5hkeqZcUzR35Ci3z8BB3PKF/KT/pPhBe4WIpfKwKL8nXDQMF/Kf551gx4NaQvFOFiea90JzTrn8O5QGCP+HsYhUzwGeksw8NTIm1JGuNnPnHF1hNgxSwA/T0rAZKAN7LunauMI3L/M7KuwQU9WL6lcBZ4yniYUaVIBbDHCKRoj9AODmB6TYlDPJgl8TSGrgsFnz10h51KLhWogVkpyAwNuHm7pwiizu+icfR2QRN4MiXh+HTvH0nZVdllxVLdo/ws/NI7UprAa3sSP03niOYWVWzYHXDqceAcF3l9C5sr98i2IcjqSUIYdVJiqMb32xFAjYjJ2/rr2QDHR/UkbqN/CPNKSSRn8FOqLNmgChTKVg0+TXo1D5rxVCDQ9MzjL9cKuFl4QdVvzV4jpzrL/634rPjbpcUlQ71XrBBheaDBq91N0McXTTQmc0=
-  file: main.go
+    secure: riaExw87WY0LLjHbvA7qGml9ahljEXv1Qkm0TVeyzvGKWNOGYvwTeg+6sLI1HbEV68ECqk6DkJOT5jawYt75ZN+EAX7fW0v0AWvGdeAHZl6ln6GrD+hXzvawAyd8NyuKsA+dCy177Wr5sHnXh0G/qlSDw9tyfyzZu7cW8HUmHdcobNtfueN9C/wVIqYxMYGG5dkhZEd5lQakWCRNxBRL2frupZVheN7BcUbExjAmzX+uYmile2+lqC6Am+C0XThQiL+ucsaYtMgBE3hSNLlt0vUps1GVmkp63D/D/WkrJF7cKaMJqCG2Khkk/zpJDx9BdKxahYxNw7EiD75CRL4E3ps3r1pQY93gzaZv1A1++Ozvgax4qGIuW7lU6Lt57uyJwzl1L3WRzfXhAg7x2VyBX76tYlv2MsQFnF1+FbFiZKe74iu3RCU5L9izgY/57gt4vrQHPJNoUr/fbvBVutLquTDqskAXk1RAeojiNgB2uTwEYNBvFhlEOOh7MNb1sPkjGU3yP9x7yDMg8wNe2gTlZdbtdHOg7gttsgGplu/RrlFmUSkq97i4Xy5ALCafmlBmhfcV+AQ6I+j6jy1ouUVfauLUdtLRh7Ejb9vMMmCMa7K/bNSxjEygDReB5gfJVrVjZ4JUiGz5pyLQI1NsNlR/z+oyFi5BtOUav/TGRGcTxGE=
+  file: main
   on:
     repo: berchev/golang_hello
     tags: true
