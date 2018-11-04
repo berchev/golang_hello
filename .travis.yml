@@ -2,6 +2,7 @@ language: generic
 dist: xenial
 sudo: required
 install:
+- while sleep 9m; do echo "=====[ $SECONDS seconds still running ]====="; done &
 - bash scripts/travis_provision.sh
 before_script:
 - go build main.go
@@ -11,7 +12,7 @@ deploy:
   provider: releases
   skip_cleanup: true
   api_key:
-    secure: riaExw87WY0LLjHbvA7qGml9ahljEXv1Qkm0TVeyzvGKWNOGYvwTeg+6sLI1HbEV68ECqk6DkJOT5jawYt75ZN+EAX7fW0v0AWvGdeAHZl6ln6GrD+hXzvawAyd8NyuKsA+dCy177Wr5sHnXh0G/qlSDw9tyfyzZu7cW8HUmHdcobNtfueN9C/wVIqYxMYGG5dkhZEd5lQakWCRNxBRL2frupZVheN7BcUbExjAmzX+uYmile2+lqC6Am+C0XThQiL+ucsaYtMgBE3hSNLlt0vUps1GVmkp63D/D/WkrJF7cKaMJqCG2Khkk/zpJDx9BdKxahYxNw7EiD75CRL4E3ps3r1pQY93gzaZv1A1++Ozvgax4qGIuW7lU6Lt57uyJwzl1L3WRzfXhAg7x2VyBX76tYlv2MsQFnF1+FbFiZKe74iu3RCU5L9izgY/57gt4vrQHPJNoUr/fbvBVutLquTDqskAXk1RAeojiNgB2uTwEYNBvFhlEOOh7MNb1sPkjGU3yP9x7yDMg8wNe2gTlZdbtdHOg7gttsgGplu/RrlFmUSkq97i4Xy5ALCafmlBmhfcV+AQ6I+j6jy1ouUVfauLUdtLRh7Ejb9vMMmCMa7K/bNSxjEygDReB5gfJVrVjZ4JUiGz5pyLQI1NsNlR/z+oyFi5BtOUav/TGRGcTxGE=
+    secure: DIGnsBNOjsF0skez5jgqHW8shGdr0HZMlPxEmWR1RUq8zwPq6NNSjENjsSUc7gtGfPK76eMTj3ZS0VT35w6iQpl+NIROuTyXKm6xY6O4ulv9uGdOsreOmYFqQM0jwgH6DMAxohj6j8KvNwjBCMst2vJWgJJm+Z+HmI+y6Tz4hfnzwX+rvAU4ndnMhPAINWQp2Kjt6rbyhxLSzx02p+ipAcHYm984h+7+tyWRAiRfuJ0YI5VuyzqDksnJO08E+MHnORfDW9tdeMdtrJN1LZi78YiEoV7gb1/kd6KwrfA7jgvGUrhpM/9IxUo8xou3MxfTajgz0uHCLy7SjJtYTMW+l+DNuRpjTz92aXR6PB+ukFtrA5membKt6NrvuuAk6t1zdZdT6dn/fMeDTRWOg0/easU0X0z2TK/CQwhaspgVcirdh0fq08xfqARZfqG2H5Bjw51ZfQlWmzZJEWPw3MldWzN0SoWHcwimkH0qQ3ex2valXwM6oZ2aR+B+30fwRceG6UeoqZlE5ShvLjLrtCFyzW/gnCqzsR2qOecLVaGmikN3qHLFWRj4fzWkIIdfAiCKVE5Ixf90e7Voubi82Nw8mhenZe3q9hwXtTFcSvvDNC3eTqaLtep/Fk7XESAD9CVRMTCD6kVKo3n9ngnnrwosHiWorioPYFEyU+AUaOZQEF4=
   file: main
   on:
     repo: berchev/golang_hello
