@@ -1,19 +1,8 @@
-language: generic
+language: go
 dist: xenial
 sudo: required
-install:
-- while sleep 9m; do echo "=====[ $SECONDS seconds still running ]====="; done &
-- bash scripts/travis_provision.sh
 before_script:
 - go build main.go
+- ls -al
 script:
 - bash test.sh
-deploy:
-  provider: releases
-  skip_cleanup: true
-  api_key:
-    secure: NNc2dfdhrAmdjTrpeB5C/MWy8jCdc0Q3eLtBFCt/dTDDIGwd92eC4KsoJyspGYTsyhUpl5AoO1phmJudKLbaQuZlm9F2ZP4oMfJnOWleHm63pFMXIGWSZfnngulsTJ0ExQP7xzivI13wye7B579XDgBorq3SP58kHngzBeCV4Tgcfqeds01+BMbHniCFci9IHK6UThB7ZHRUKG8LrmUAPZ0ZoUmCFnrlscYTa3oVFlItNen3P/Owz9PxVpIyYQkCsDWCMp31MQJQ6f1jWVovaTjXxEem/XEfJz53/yl0RfNrrgTumG88LqKyNfdtf95W9GiXU7AIMlAiAaEJIAfM7c0XDTjFPwCqhDM46SLPmnxxOMsjMeJv/8m/0GFbF6HS4yzXqkNNSmT4HHvIsW/ed3aQXw/mbypn/YKCO1XYytBG0ZxDvjm1Wq8LB+7W/P1DRDCk+kkawl0Q2AKJHw3moEyogntOo0pNQz2KE/6hevN1Mzt5NmQyr55oOD+EdBRzVDvw0L5jX5XxlmYX3FgX1UyoMSiO2gruAEDmHnakER/DTCimfqU41jKIB1P/ZGg+rhmhSQy8KNqVVckwqj78ZO4tgLPR6TAYAghF1/epFhg3pTqucLsXxTBE4vB3A6eBNn651kSzB1G7ysb4r6vKHx1BpLZ2e74bpDNP1FZ7UT4=
-  file: main
-  on:
-    repo: berchev/golang_hello
-    tags: true
